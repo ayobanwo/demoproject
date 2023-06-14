@@ -1,6 +1,7 @@
 import Box from './Box/Box';
 import Counter from './Counter/Counter';
 import JohnState from './JohnState/JohnState';
+import JokeApp from './JokeApp/JokeApp';
 import MemeGen from './MemeGen/MemeGen';
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
 		// <MemeGen />
 		// <Counter />
 		// <JohnState />
-		<Box />
+		// <Box />
+		<JokeApp />
 	);
 }
 
