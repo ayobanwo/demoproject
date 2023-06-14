@@ -1,12 +1,12 @@
 import React from 'react'
 
 
-function Square({on, toggle, id}) {
+function Square({on, toggleHandler}) {
     const styles = {
         backgroundColor : on ? 'white' : 'black'
     }
 	return (
-		<div className="box" style={styles} onClick={ ()=> toggle(id)}> </div>
+		<div className="box" style={styles} onClick={toggleHandler}> </div>
 	)
 }
 
