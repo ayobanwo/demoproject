@@ -9,11 +9,6 @@ export default function Meme() {
         randomImage: ''
     })
     const [allMemeImages, setAllMemeImages] = useState(memesData)
-    /**
-     * Challenge: Save the random meme URL in state
-     * - Below the div.form, add an <img /> and set the
-     *   src to the new `memeImage` state you created
-     */
     
     function getMemeImage() {
         const memesArray = allMemeImages
@@ -24,6 +19,16 @@ export default function Meme() {
         }))
         
     }
+
+    function handleChange(event) {
+        const {name, value} = event.target
+        setMeme(prevMemeData =>{
+            return {
+                ...prevMemeData,
+                [name]: value
+            }
+        })
+    }
     
     return (
         <main>
@@ -32,11 +37,17 @@ export default function Meme() {
                     type="text"
                     placeholder="Top text"
                     className="form--input"
+                    onChange={handleChange}
+                    name="topText"
+                    value={meme.topText}
                 />
                 <input 
                     type="text"
                     placeholder="Bottom text"
                     className="form--input"
+                    onChange={handleChange}
+                    name="bottomText"
+                    value={meme.bottomText}
                 />
                 <button 
                     className="form--button"
@@ -45,7 +56,12 @@ export default function Meme() {
                     Get a new meme image 🖼
                 </button>
             </div>
-            <img src={meme.randomImage} className="meme--image" alt=""/>
+            
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--image" alt="" />
+                <h2 className="meme--text top"  >{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
         </main>
     )
 }

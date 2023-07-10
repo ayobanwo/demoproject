@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import boxes from "./Boxes"
-import './style.css'
+// import './style.css'
 import Square from "./Square"
 
 export default function Box() {
